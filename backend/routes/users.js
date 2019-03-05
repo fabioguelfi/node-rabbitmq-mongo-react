@@ -1,12 +1,9 @@
-var express = require('express');
-var router = express.Router();
-const { createUser } = require('../modules/handlers/user')
+var express = require('express')
+var router = express.Router()
+const { createUser, getAllUsers } = require('../modules/handlers/user')
 
-/* GET users listing. */
-router.get('/', function (req, res, next) {
-  res.send('respond with a resource');
-});
+router.get('/', getAllUsers)
 
-router.post('/', createUser);
+router.post('/register', createUser)
 
-module.exports = router;
+module.exports = router

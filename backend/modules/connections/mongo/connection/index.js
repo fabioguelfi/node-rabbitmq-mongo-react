@@ -12,7 +12,7 @@ connection.getConnection = () => {
 
   console.log(`Connecting on mongoDB mongodb://${mongoUser}:***@${mongoHost}:${mongoPort}/${mongoDatabase}`)
 
-  return mongoose.connect(connection.getURI({ user: mongoUser, password: mongoPassword, host: mongoHost, port: mongoPort, database: mongoDatabase, mongoUri }), {})
+  return mongoose.connect(connection.getURI({ user: mongoUser, password: mongoPassword, host: mongoHost, port: mongoPort, database: mongoDatabase, mongoUri }),  { useNewUrlParser: true })
 }
 
 connection.getURI = ({ user, password, host, port, database, mongoUri }) => {
